@@ -7,6 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        html, body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
@@ -59,11 +64,18 @@
         
         .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
         
-        .hero {
-            min-height: 100vh; display: flex; align-items: center; justify-content: center;
-            text-align: center; padding: 0 5%; background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
-            position: relative; padding-top:100px
-        }
+        .hero{
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 5% 0;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+    position: relative;
+}
         
         .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; }
         .hero-content h1 span { color: var(--primary); }
