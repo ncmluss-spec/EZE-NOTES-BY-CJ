@@ -79,43 +79,50 @@
     background:linear-gradient(135deg,#e0e7ff 0%,#f8fafc 100%);
     overflow: hidden;       
 }
-        .hero::before{
-    content:'';
+        .glow{
     position:absolute;
-    width:250px;
-    height:250px;
-    background:rgba(99,102,241,0.30);
     border-radius:50%;
-    top:-100px;
-    right:-0;
-    filter:blur(100px);
-    animation:float1 6s ease-in-out infinite;
+    filter:blur(120px);
+    z-index:0;
 }
 
-.hero::after{
-    content:'';
-    position:absolute;
-    width:200px;
-    height:200px;
-    background:rgba(245,158,11,0.30);
-    border-radius:50%;
-    bottom:-80px;
-    left:-0;
-    filter:blur(100px);
-    animation:float2 8s ease-in-out infinite;
+.glow1{
+    width:350px;
+    height:350px;
+    background:#6366f1;
+    top:-100px;
+    right:-100px;
+    opacity:.4;
 }
+
+.glow2{
+    width:300px;
+    height:300px;
+    background:#f59e0b;
+    bottom:-100px;
+    left:-100px;
+    opacity:.3;
+}
+
+.glow3{
+    width:250px;
+    height:250px;
+    background:#06b6d4;
+    top:40%;
+    left:45%;
+    opacity:.25;
+}
+       
         
         .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; }
         .hero-content h1 span { color: var(--primary); }
         
         .hero-content p { font-size: 1.1rem; color: var(--gray); margin-bottom: 2rem; }
         .hero-content{
-    width:100%;
-    max-width:900px;
-    margin:0 auto;
-    animation:fadeUp 1s ease;
+    position:relative;
+    z-index:2;
 }
-        
+     
         .btn-hero {
             display: inline-block; padding: 1rem 2.5rem; background: var(--primary);
             color: var(--white); border-radius: 50px; font-weight: 600; font-size: 1.1rem;
@@ -221,32 +228,19 @@
     font-size:16px;
     outline:none;
 }
-        @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-        @keyframes float1{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(25px);
-    }
-}
-
-@keyframes float2{
+       @keyframes floatGlow{
     0%,100%{
         transform:translateY(0);
     }
     50%{
         transform:translateY(-25px);
     }
+}
+
+.glow1,
+.glow2,
+.glow3{
+    animation:floatGlow 6s ease-in-out infinite;
 }
     </style>
 </head>
@@ -266,6 +260,11 @@
     </header>
 
     <section class="hero" id="home">
+        <div class="glow glow1"></div>
+<div class="glow glow2"></div>
+<div class="glow glow3"></div>
+
+<div class="hero-content">
         <div class="hero-content">
             <h1>Ace Your Exams with <br><span>EZE NOTES BY CJ</span></h1>
             <p>Quality notes, expert guidance, and premium study materials designed to make complex concepts simple.NOTES CREDIT TO PW. THANKS TO PHYSICS WALLAH FOR PROVIDING AFFORDABLE AND REACHABLE EDUACTION TO EVERYONE. </p>
