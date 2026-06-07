@@ -106,7 +106,8 @@
   box-shadow:0 12px 30px rgba(0,0,0,0.12);
   border:1px solid #ececec;
   transition:0.3s ease;          
-  text-align: centre;          
+  text-align: centre;
+  animation: fadeUp 0.8s ease;          
 }
         .card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-color: var(--primary); }
         
@@ -183,6 +184,16 @@
     box-shadow:0 10px 20px rgba(0,0,0,.1);
     font-size:16px;
     outline:none;
+}
+        @keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
     </style>
 </head>
