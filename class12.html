@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 12 Curriculum</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#eef6f7;
+}
+
+.navbar{
+background:white;
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.logo{
+font-size:24px;
+font-weight:700;
+color:#2b4f60;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#333;
+margin-left:25px;
+font-weight:500;
+}
+
+.wrapper{
+max-width:1200px;
+margin:40px auto;
+padding:20px;
+}
+
+.title{
+text-align:center;
+margin-bottom:30px;
+}
+
+.title h1{
+font-size:38px;
+color:#1f2937;
+}
+
+.title p{
+color:#64748b;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card-header{
+padding:18px;
+color:white;
+font-size:22px;
+font-weight:600;
+}
+
+.maths{background:#4f6fa5;}
+.physics{background:#57a8c2;}
+.chem{background:#5077b8;}
+.bio{background:#6fb58d;}
+
+.card-body{
+padding:20px;
+}
+
+.card-body ul{
+list-style:none;
+}
+
+.card-body li{
+padding:8px 0;
+border-bottom:1px solid #eee;
+}
+
+.card-body li:last-child{
+border:none;
+}
+
+footer{
+margin-top:50px;
+text-align:center;
+padding:20px;
+color:#666;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+<div class="logo">EZE NOTES BY CJ</div>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="#">Subjects</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</div>
+</div>
+
+<div class="wrapper">
+
+<div class="title">
+<h1>CLASS 12 CURRICULUM</h1>
+<p>Science Stream Subjects</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-header maths">📘 Mathematics</div>
+<div class="card-body">
+<ul>
+<li>Relations & Functions</li>
+<li>Inverse Trigonometric Functions</li>
+<li>Matrices</li>
+<li>Determinants</li>
+<li>Continuity & Differentiability</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header physics">⚛ Physics</div>
+<div class="card-body">
+<ul>
+<li>Electrostatics</li>
+<li>Current Electricity</li>
+<li>Magnetic Effects of Current</li>
+<li>Electromagnetic Induction</li>
+<li>Alternating Current</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header chem">⚗ Chemistry</div>
+<div class="card-body">
+<ul>
+<li>Solid State</li>
+<li>Solutions</li>
+<li>Electrochemistry</li>
+<li>Chemical Kinetics</li>
+<li>Surface Chemistry</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header bio">🧬 Biology</div>
+<div class="card-body">
+<ul>
+<li>Reproduction</li>
+<li>Genetics & Evolution</li>
+<li>Biology & Human Welfare</li>
+<li>Biotechnology</li>
+<li>Ecology & Environment</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 EZE NOTES BY CHIRAG JANGID
+</footer>
+
+</body>
+</html>
