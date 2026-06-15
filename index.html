@@ -333,12 +333,23 @@
  0%{background-position:0%}
  100%{background-position:300%}
 }
+        .cursor{
+ width:20px;
+ height:20px;
+ border-radius:50%;
+ position:fixed;
+ background:#6366f1;
+ pointer-events:none;
+ filter:blur(10px);
+}
     </style>
 </head>
 <body>
 
     <header>
+        
         <nav class="navbar">
+            <div class="cursor"></div>
             <div class="logo">EZE NOTES <span>BY CJ</span></div>
             <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
             <ul class="nav-links">
