@@ -296,6 +296,16 @@
 .glow{
   animation: float 8s ease-in-out infinite;
 }
+        .card{
+  opacity:0;
+  transform:translateY(50px);
+  transition:all .8s ease;
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
     </style>
 </head>
 <body>
@@ -541,7 +551,25 @@
                 });
             });
         });
+        
     </script>
+
+                             <script>
+const cards = document.querySelectorAll('.card');
+
+function revealCards(){
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+
+    if(top < window.innerHeight - 100){
+      card.classList.add('show');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealCards);
+window.addEventListener('load', revealCards);
+</script>
     
 </body>
 </html>
