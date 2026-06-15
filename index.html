@@ -783,7 +783,24 @@ VanillaTilt.init(document.querySelectorAll(".card"),{
     loader.style.display="none";
   },500);
 }); 
-  </script>                          
+  </script>
+                             <script>
+const searchInput = document.querySelector(".search-box input");
+const cards = document.querySelectorAll(".card");
+
+searchInput.addEventListener("keyup", function(){
+  let value = this.value.toLowerCase();
+
+  cards.forEach(card => {
+    let text = card.innerText.toLowerCase();
+    if(text.includes(value)){
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
+                             </script>
     
 </body>
 </html>
