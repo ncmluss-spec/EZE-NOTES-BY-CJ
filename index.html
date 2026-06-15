@@ -570,6 +570,16 @@ function revealCards(){
 window.addEventListener('scroll', revealCards);
 window.addEventListener('load', revealCards);
 </script>
+ <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+
+<script>
+VanillaTilt.init(document.querySelectorAll(".card"),{
+ max:8,
+ speed:400,
+ glare:true,
+ "max-glare":0.2
+});
+</script>
     
 </body>
 </html>
