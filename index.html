@@ -801,6 +801,12 @@ searchInput.addEventListener("keyup", function(){
   });
 });
                              </script>
+  <script>
+window.addEventListener("scroll", () => {
+  document.querySelector("header").style.boxShadow =
+    window.scrollY > 50 ? "0 5px 20px rgba(0,0,0,0.3)" : "none";
+});
+  </script>                           
     
 </body>
 </html>
