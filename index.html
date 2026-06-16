@@ -557,6 +557,89 @@
  backdrop-filter:blur(20px);
  transform:rotateX(60deg) rotateZ(45deg);
 }
+        #loader{
+  position:fixed;
+  inset:0;
+  background:#020617;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+  transition:opacity .8s ease, visibility .8s ease;
+}
+
+.loader-content{
+  text-align:center;
+}
+
+.loader-content h1{
+  font-size:3rem;
+  font-weight:800;
+  background:linear-gradient(90deg,#8b5cf6,#06b6d4);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:fadeIn 1s ease;
+}
+
+.loader-content p{
+  color:#94a3b8;
+  margin-top:10px;
+}
+
+.loader-bar{
+  width:280px;
+  height:6px;
+  background:rgba(255,255,255,.1);
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:20px;
+}
+
+.loader-progress{
+  width:0%;
+  height:100%;
+  border-radius:20px;
+  background:linear-gradient(90deg,#8b5cf6,#06b6d4);
+  animation:loading 2.5s ease forwards;
+}
+
+@keyframes loading{
+  from{width:0%;}
+  to{width:100%;}
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.loader-hide{
+  opacity:0;
+  visibility:hidden;
+}
+        .hero{
+  opacity:0;
+  transform:translateY(40px);
+  animation:heroReveal 1s ease forwards;
+  animation-delay:2.5s;
+}
+
+@keyframes heroReveal{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
         
     </style>
     
@@ -564,9 +647,15 @@
 </head>
 <body>
     <div id="loader">
-  <h1>EZE NOTES BY CJ</h1>
+  <div class="loader-content">
+    <h1>EZE NOTES BY CJ</h1>
+    <p>Preparing Your Learning Experience...</p>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
 </div>
-
+   
     <header>
         
         <nav class="navbar">
@@ -871,7 +960,15 @@ window.addEventListener("scroll", () => {
   document.querySelector("header").style.boxShadow =
     window.scrollY > 50 ? "0 5px 20px rgba(0,0,0,0.3)" : "none";
 });
-  </script>                           
+  </script> 
+  <script>
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("loader")
+      .classList.add("loader-hide");
+  }, 2500);
+});
+</script>                           
     
 </body>
 </html>
