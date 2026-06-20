@@ -279,11 +279,35 @@
     width:90%;
   }
 
-  .founder-name{
-    font-size:24px;
-  }
+ .founder-name{
+    font-size: 36px;
+    font-weight: 800;
+    background: linear-gradient(
+        90deg,
+        #60a5fa,
+        #a855f7,
+        #06b6d4
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: founderGlow 6s linear infinite;
+
+    letter-spacing: 1px;
 }
-        @media (max-width:768px){
+     
+            @keyframes founderGlow{
+    0%{
+        background-position:0% center;
+    }
+
+    100%{
+        background-position:200% center;
+    }
+}     
+      
+            @media (max-width:768px){
   .glow1{
       right:-40px;
   }
@@ -653,7 +677,86 @@
 .logo{
     white-space: nowrap;
 }
-        
+        .hero-content{
+    animation: heroReveal 1.5s ease;
+}
+
+@keyframes heroReveal{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+            .btn-hero{
+    position:relative;
+    overflow:hidden;
+}
+
+.btn-hero::before{
+    content:'';
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:60%;
+    height:100%;
+
+    background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.4),
+      transparent
+    );
+
+    transition:0.8s;
+}
+
+.btn-hero:hover::before{
+    left:150%;
+}
+            .card{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+.card.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+     .founder-line{
+    width:120px;
+    height:3px;
+    margin:10px auto;
+    background:linear-gradient(90deg,#7c5cff,#00d4ff);
+    border-radius:50px;
+    animation:linePulse 3s infinite;
+}
+
+@keyframes linePulse{
+    0%,100%{
+        width:120px;
+        opacity:0.7;
+    }
+    50%{
+        width:180px;
+        opacity:1;
+    }
+}
+            
     </style>
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -701,9 +804,11 @@
         <div class="hero-content">
             <h1>Ace Your Exams with <br><span>EZE NOTES BY CJ</span></h1>
             <p>Quality notes, expert guidance, and premium study materials designed to make complex concepts simple.Notes are tsken from various trustable sources. </p>
-    <p class="founder-name">
-            Founder - Chirag Jangid 
-            </p>
+    <div class="founder-premium">
+    <span>Founder</span>
+    <h3>Chirag Jangid</h3>
+</div>
+            <div class="founder-line"><div/>
             <div class="search-box">
     <input type="text" placeholder="Search Subject or Chapter">
 </div>
@@ -1004,7 +1109,28 @@ document.addEventListener("mouseout",(e)=>{
 });
     </script>
 
+<script>
 
+const observer =
+new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+document
+.querySelectorAll(".card")
+.forEach(el => observer.observe(el));
+
+</script>
 
                              
 </body>
