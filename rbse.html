@@ -17,11 +17,15 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#f8fafc;
+background:#050816;
+color:white;
+overflow-x:hidden;
 }
 
 header{
-background:#6366f1;
+background:rgba(10,15,35,0.8);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(255,255,255,0.1);
 color:white;
 padding:20px;
 text-align:center;
@@ -30,15 +34,25 @@ font-weight:bold;
 }
 
 .hero{
-padding:80px 20px;
+padding:120px 20px;
 text-align:center;
-background:linear-gradient(135deg,#6366f1,#8b5cf6);
+background:
+radial-gradient(circle at top right,#7c5cff33,transparent 40%),
+radial-gradient(circle at bottom left,#00d4ff22,transparent 40%),
+#050816;
 color:white;
 }
 
 .hero h1{
-font-size:3rem;
-margin-bottom:15px;
+font-size:4rem;
+font-weight:800;
+background:linear-gradient(
+90deg,
+#7c5cff,
+#00d4ff
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero p{
@@ -70,18 +84,19 @@ gap:30px;
 }
 
 .card{
-background:white;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.1);
 padding:30px;
 border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-transition:.3s;
+transition:.4s;
 }
 
 .card:hover{
-transform:translateY(-8px);
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
+transform:translateY(-10px);
+box-shadow:
+0 0 30px rgba(124,92,255,.4);
 }
-
 .card h2{
 color:#6366f1;
 margin-bottom:15px;
@@ -104,19 +119,25 @@ font-size:14px;
 .btn{
 display:inline-block;
 margin-top:20px;
-padding:12px 25px;
-background:#6366f1;
+padding:14px 30px;
+border-radius:50px;
+background:linear-gradient(
+90deg,
+#7c5cff,
+#00d4ff
+);
 color:white;
 text-decoration:none;
-border-radius:50px;
-font-weight:600;
-transition:.3s;
+font-weight:700;
+transition:.4s;
 }
 
 .btn:hover{
-background:#4f46e5;
+transform:translateY(-4px);
+box-shadow:
+0 0 30px rgba(0,212,255,.6);
 }
-
+  
 footer{
 background:#0f172a;
 color:white;
@@ -125,10 +146,20 @@ padding:25px;
 margin-top:60px;
 }
 
+  .grid-bg{
+position:fixed;
+inset:0;
+background-image:
+linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+background-size:40px 40px;
+z-index:-1;
+}
+  
 </style>
 </head>
 <body>
-
+<div class="grid-bg"></div>
 <header>
 EZE NOTES BY CJ
 </header>
