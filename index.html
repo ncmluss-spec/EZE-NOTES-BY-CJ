@@ -1235,14 +1235,15 @@ window.onload = () => {
   }
 };
 </script>
-   import {
+ 
+   <script type="module">
+  import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
   onAuthStateChanged,
   signOut
- } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js"; 
-   <script type="module">
+ } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";        
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
 import {
