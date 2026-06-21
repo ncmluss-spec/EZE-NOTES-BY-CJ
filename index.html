@@ -1225,6 +1225,26 @@ window.onload = () => {
   }
 };
 </script>
-                             
+    
+    <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCVB2ugk1IxUGd4QHCesg3v0VqcFyxt0c8",
+  authDomain: "eze-notes-by-cj.firebaseapp.com",
+  projectId: "eze-notes-by-cj",
+  storageBucket: "eze-notes-by-cj.firebasestorage.app",
+  messagingSenderId: "156592482475",
+  appId: "1:156592482475:web:5492a1702d4b92e6e1afee",
+  measurementId: "G-KBJDX06HX9"
+};
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+console.log("Firebase Connected Successfully");
+</script>
+    
 </body>
 </html>
