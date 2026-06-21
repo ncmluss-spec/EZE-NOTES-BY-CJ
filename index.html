@@ -829,31 +829,7 @@ transform:translateY(0);
 </head>
 <body>
     
-   <div class="review-box">
-  <h3>Rate this website</h3>
-
-  <div class="star-rating">
-
-    <input type="radio" id="star5" name="rating" value="5">
-    <label for="star5">★</label>
-
-    <input type="radio" id="star4" name="rating" value="4">
-    <label for="star4">★</label>
-
-    <input type="radio" id="star3" name="rating" value="3">
-    <label for="star3">★</label>
-
-    <input type="radio" id="star2" name="rating" value="2">
-    <label for="star2">★</label>
-
-    <input type="radio" id="star1" name="rating" value="1">
-    <label for="star1">★</label>
-
-  </div>
-
-  <p id="rating-text">Select rating</p>
-   </div>
-    </div>
+ 
     <div id="loader">
   <div class="loader-content">
     <h1>EZE NOTES BY CJ</h1>
@@ -958,7 +934,7 @@ transform:translateY(0);
                    
                      <a href="https://www.pw.live/school-prep/exams/ncert-solutions-class-10-maths" class="btn-secondary">
                ALL Chapter  – NCERT Solutions
-                         <a/>
+                     </a>
 
                     <a href="https://www.mediafire.com/file/iv5wpf6f5r2enff/REAL_NUMBERS_CH1.pdf/file" class="btn-secondary">
                 Chapter 1 – Real Numbers
@@ -1086,6 +1062,31 @@ transform:translateY(0);
 </section>
 
     <footer>
+          <div class="review-box">
+  <h3>Rate this website</h3>
+
+  <div class="star-rating">
+
+    <input type="radio" id="star5" name="rating" value="5">
+    <label for="star5">★</label>
+
+    <input type="radio" id="star4" name="rating" value="4">
+    <label for="star4">★</label>
+
+    <input type="radio" id="star3" name="rating" value="3">
+    <label for="star3">★</label>
+
+    <input type="radio" id="star2" name="rating" value="2">
+    <label for="star2">★</label>
+
+    <input type="radio" id="star1" name="rating" value="1">
+    <label for="star1">★</label>
+
+  </div>
+
+  <p id="rating-text">Select rating</p>
+   </div>
+    </div>
         <div class="footer-content">
             <span class="footer-logo">EZE NOTES BY CJ</span>
             <div class="social-links">
@@ -1182,19 +1183,7 @@ window.addEventListener("load", () => {
   }, 2500);
 });
 </script>                           
-    <script>
-function closeFeedback(){
-  document.getElementById("feedback-popup").style.display="none";
-}
-
-// Exit intent (PC)
-document.addEventListener("mouseout",(e)=>{
-  if(e.clientY < 5){
-    document.getElementById("feedback-popup").style.display="flex";
-  }
-});
-    </script>
-
+   
 <script>
 
 const observer =
