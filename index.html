@@ -1159,7 +1159,7 @@ const searchcards = document.querySelectorAll(".card");
 searchInput.addEventListener("keyup", function(){
   let value = this.value.toLowerCase();
 
-  cards.forEach(card => {
+  searchcards.forEach(card => {
     let text = card.innerText.toLowerCase();
     if(text.includes(value)){
       card.style.display = "block";
