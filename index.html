@@ -879,7 +879,11 @@ transform:translateY(0);
               <p>✅ Hindi & Sanskrit Notes </p>
                 <p>✅ Chapterwise PDF Downloads </p>
               <p>✅ Board Exam Preparation Notes </p>
-                    
+             <button id="google-login" class="btn-hero">
+  <i class="fab fa-google"></i> Login with Google
+</button>
+
+<div id="user-info" style="margin-top:15px;"></div>       
             <a href="#boards" class="btn-hero">Explore Notes</a>
                
          <a href="https://chatgpt.com/" class="btn-hero">
@@ -1231,7 +1235,13 @@ window.onload = () => {
   }
 };
 </script>
-    
+   import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  onAuthStateChanged,
+  signOut
+ } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js"; 
    <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
@@ -1255,6 +1265,8 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();       
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
@@ -1281,6 +1293,39 @@ async function updateVisitorCount() {
 }
 
 updateVisitorCount();
+const loginBtn = document.getElementById("google-login");
+const userInfo = document.getElementById("user-info");
+
+loginBtn.addEventListener("click", async () => {
+  try {
+    await signInWithPopup(auth, provider);
+  } catch (error) {
+    console.error(error);
+    alert(error.message);
+  }
+});
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    userInfo.innerHTML = `
+      <p>✅ Welcome, ${user.displayName}</p>
+      <img src="${user.photoURL}" width="60"
+      style="border-radius:50%;margin-top:10px;">
+      <br><br>
+      <button id="logout-btn" class="btn-secondary">
+        Logout
+      </button>
+    `;
+
+    document.getElementById("logout-btn")
+      .addEventListener("click", () => {
+        signOut(auth);
+      });
+
+  } else {
+    userInfo.innerHTML = "";
+  }
+});       
 </script>
     
 </body>
