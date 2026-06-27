@@ -197,6 +197,97 @@ background:linear-gradient(135deg,#1d4ed8,#4338ca);
     transform:scale(.97);
 }
 
+  .card-body li{
+    list-style:none;
+    margin:18px 0;
+    border:none;
+}
+
+.premium-chapter{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    padding:18px 24px;
+    text-decoration:none;
+    color:#fff;
+    border-radius:18px;
+    overflow:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5,
+        #7c3aed
+    );
+
+    background-size:300% 300%;
+    animation:gradientMove 6s ease infinite;
+
+    box-shadow:
+    0 15px 40px rgba(79,70,229,.35);
+
+    transition:.45s ease;
+}
+
+.premium-chapter::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:70%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.55),
+        transparent
+    );
+    transition:.8s;
+}
+
+.premium-chapter:hover::before{
+    left:140%;
+}
+
+.premium-chapter:hover{
+    transform:
+    perspective(800px)
+    rotateX(6deg)
+    translateY(-8px)
+    scale(1.03);
+
+    box-shadow:
+    0 25px 60px rgba(79,70,229,.5);
+}
+
+.chapter-title{
+    font-size:17px;
+    font-weight:600;
+}
+
+.chapter-icon{
+    font-size:26px;
+    transition:.4s;
+}
+
+.premium-chapter:hover .chapter-icon{
+    transform:
+    rotate(12deg)
+    scale(1.25);
+}
+
+.premium-chapter:active{
+    transform:scale(.96);
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
   
 </style>
 </head>
@@ -241,9 +332,9 @@ background:linear-gradient(135deg,#1d4ed8,#4338ca);
 <ul>
 <li>Basic Concepts of Chemistry</li>
 <li>
-<a href="https://drive.google.com/file/d/1JRuv9BhxAnxyEFTKA0rrjTX-lQgvGsEf/view?usp=drive_link" class="chapter-btn" target="_blank">
-    <span>Structure of Atom</span>
-    <span>→</span>
+<a href="https://drive.google.com/file/d/1JRuv9BhxAnxyEFTKA0rrjTX-lQgvGsEf/view?usp=drive_link"" class="premium-chapter" target="_blank">
+    <span class="chapter-title">Structure of Atom</span>
+    <span class="chapter-icon">📖</span>
 </a>
 </li>
 <li>Classification of Elements</li>
