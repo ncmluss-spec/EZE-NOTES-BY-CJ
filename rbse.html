@@ -73,8 +73,18 @@ margin-bottom:40px;
 }
 
 .section-title h2{
-font-size:2.5rem;
-color:#1e293b;
+    font-size:2.8rem;
+    color:#ffffff;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.stream h3{
+    color:#ffffff;
+    font-size:1.25rem;
+    font-weight:600;
+    margin-bottom:8px;
+    transition:.4s ease;
 }
 
 .cards{
@@ -112,8 +122,10 @@ margin-bottom:5px;
 }
 
 .stream p{
-color:#64748b;
-font-size:14px;
+    color:#b8c5e3;
+    font-size:15px;
+    line-height:1.7;
+    transition:.4s ease;
 }
 
 .btn{
@@ -155,6 +167,109 @@ linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
 background-size:40px 40px;
 z-index:-1;
 }
+
+
+  .card{
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:-100%;
+    background:linear-gradient(
+        130deg,
+        transparent,
+        rgba(124,92,255,.15),
+        rgba(0,212,255,.18),
+        transparent
+    );
+    transition:1s;
+}
+
+.card:hover::before{
+    inset:100%;
+}
+
+  .stream{
+    transition:.4s;
+}
+
+.card:hover .stream h3{
+    color:#38bdf8;
+    transform:translateX(8px);
+}
+
+.card:hover .stream p{
+    color:#ffffff;
+    transform:translateX(8px);
+}
+
+  .card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:28px;
+    padding:32px;
+    transition:.5s cubic-bezier(.22,1,.36,1);
+}
+
+.card:hover{
+    transform:
+        translateY(-14px)
+        scale(1.02);
+    border-color:#38bdf8;
+    box-shadow:
+        0 20px 50px rgba(0,212,255,.18),
+        0 0 40px rgba(124,92,255,.25);
+}
+
+  .card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:28px;
+    padding:1px;
+    background:linear-gradient(
+        135deg,
+        #7c5cff,
+        #00d4ff,
+        #7c5cff
+    );
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    opacity:0;
+    transition:.5s;
+}
+
+.card:hover::after{
+    opacity:1;
+}
+
+  .btn{
+    position:relative;
+    overflow:hidden;
+}
+
+.btn::before{
+    content:"";
+    position:absolute;
+    width:0;
+    height:100%;
+    left:0;
+    top:0;
+    background:rgba(255,255,255,.18);
+    transition:.5s;
+}
+
+.btn:hover::before{
+    width:100%;
+}
+
   
 </style>
 </head>
