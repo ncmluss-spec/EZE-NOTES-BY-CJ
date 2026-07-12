@@ -1,20 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>School Homework | EZE NOTES BY CJ</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif}
+body{background:#020617;color:#fff;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:-30%;background:
+radial-gradient(circle,#8b5cf655 0,transparent 35%),
+radial-gradient(circle at 80% 20%,#06b6d455 0,transparent 35%),
+radial-gradient(circle at 20% 80%,#7c3aed55 0,transparent 35%);
+animation:move 18s linear infinite alternate;filter:blur(40px);z-index:-2}
+@keyframes move{to{transform:translate(8%,6%) rotate(10deg)}}
+header{position:sticky;top:0;background:rgba(2,6,23,.7);backdrop-filter:blur(15px);padding:18px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{font-size:1.6rem;font-weight:800;background:linear-gradient(90deg,#8b5cf6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+a{text-decoration:none;color:#fff}
+.home{padding:10px 18px;border-radius:30px;background:#8b5cf6}
+.container{max-width:1200px;margin:auto;padding:40px 20px}
+.hero{text-align:center;padding:20px}
+.hero h1{font-size:3rem}
+.search{margin:25px auto;max-width:600px}
+.search input{width:100%;padding:16px;border-radius:50px;border:none;background:#ffffff10;color:#fff}
+.subject{margin:30px 0;background:#ffffff08;border:1px solid #ffffff12;border-radius:22px;padding:22px;backdrop-filter:blur(18px)}
+.subject h2{margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.btn{display:block;padding:16px;border-radius:16px;background:linear-gradient(135deg,#8b5cf6,#06b6d4);font-weight:700;text-align:center;transition:.3s}
+.btn:hover{transform:translateY(-5px) scale(1.02)}
+.badge{background:#ff1744;padding:4px 10px;border-radius:20px;font-size:.7rem;margin-left:8px}
+footer{text-align:center;padding:30px;color:#94a3b8}
+</style>
 </head>
-
 <body>
+<header>
+<div class="logo">EZE NOTES BY CJ</div>
+<a class="home" href="index.html"><i class="fas fa-house"></i> Home</a>
+</header>
 
-<h1>School Homework</h1>
+<div class="container">
+<div class="hero">
+<h1>📚 School Homework <span class="badge">NEW</span></h1>
+<p>Premium Homework Portal</p>
+<div class="search"><input id="search" placeholder="Search homework..."></div>
+</div>
 
+<div class="subject">
+<h2>📖 English</h2>
+<div class="grid">
+<a class="btn" href="YOUR_DRIVE_LINK">Reports</a>
+<a class="btn" href="YOUR_DRIVE_LINK">Letters</a>
+<a class="btn" href="YOUR_DRIVE_LINK">Essays</a>
+</div>
+</div>
+
+<div class="subject">
+<h2>🧪 Chemistry</h2>
+<div class="grid">
+<a class="btn" href="YOUR_DRIVE_LINK">Chapter 1</a>
+<a class="btn" href="YOUR_DRIVE_LINK">Chapter 2</a>
+<a class="btn" href="YOUR_DRIVE_LINK">Assignments</a>
+</div>
+</div>
+
+<div class="subject">
+<h2>📐 Maths</h2>
+<div class="grid">
+<a class="btn" href="YOUR_DRIVE_LINK">Worksheet 1</a>
+<a class="btn" href="YOUR_DRIVE_LINK">Worksheet 2</a>
+<a class="btn" href="YOUR_DRIVE_LINK">Homework</a>
+</div>
+</div>
+
+<div class="subject">
+<h2>💻 Computer</h2>
+<div class="grid">
+<a class="btn" href="YOUR_DRIVE_LINK">Project</a>
+<a class="btn" href="YOUR_DRIVE_LINK">Lab Work</a>
+</div>
+</div>
+
+<footer>© 2026 EZE NOTES BY CJ</footer>
+</div>
+
+<script>
+const s=document.getElementById('search');
+s.onkeyup=()=>{
+ let v=s.value.toLowerCase();
+ document.querySelectorAll('.btn').forEach(b=>{
+  b.style.display=b.textContent.toLowerCase().includes(v)?'block':'none';
+ });
+}
+</script>
 </body>
-
 </html>
