@@ -863,6 +863,100 @@ transform:translateY(0);
     }
 }
         
+
+        /* ===============================
+   SCHOOL HOMEWORK SECTION
+================================= */
+
+.homework-section{
+    padding:80px 5%;
+    background:linear-gradient(135deg,#0f172a,#111827,#1e293b);
+}
+
+.homework-container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.homework-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.homework-title h2{
+    font-size:2.6rem;
+    color:#fff;
+}
+
+.homework-title p{
+    color:#94a3b8;
+    margin-top:10px;
+}
+
+.homework-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.homework-card{
+    position:relative;
+    overflow:hidden;
+    padding:25px;
+    border-radius:22px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(25px);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.4s;
+}
+
+.homework-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 45px rgba(139,92,246,.35);
+    border-color:#8b5cf6;
+}
+
+.homework-card i{
+    font-size:42px;
+    color:#8b5cf6;
+    margin-bottom:20px;
+}
+
+.homework-card h3{
+    color:#fff;
+    margin-bottom:18px;
+}
+
+.homework-btn{
+    display:block;
+    text-align:center;
+    padding:13px;
+    margin-top:12px;
+    border-radius:14px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:600;
+    background:linear-gradient(135deg,#8b5cf6,#06b6d4);
+    transition:.35s;
+}
+
+.homework-btn:hover{
+    transform:scale(1.04);
+}
+
+.homework-new{
+    position:absolute;
+    top:18px;
+    right:18px;
+    background:#ff1744;
+    color:white;
+    padding:5px 12px;
+    border-radius:50px;
+    font-size:11px;
+    font-weight:bold;
+    animation:newPulse 1.5s infinite;
+}
+
         
     </style>
     
@@ -951,6 +1045,90 @@ transform:translateY(0);
             
      <a href="https://chatgpt.com/" class="btn-hero">
              Notes with AI <span class="new-badge">NEW</span></a>
+
+<section class="homework-section">
+
+<div class="homework-container">
+
+<div class="homework-title">
+<h2>📚 School Homework
+<span class="new-badge">NEW</span>
+</h2>
+
+<p>Assignments, Projects, Reports & Homework PDFs</p>
+
+</div>
+
+<div class="homework-grid">
+
+<div class="homework-card">
+
+<div class="homework-new">NEW</div>
+
+<i class="fas fa-book-open"></i>
+
+<h3>English Reports</h3>
+
+<a href="YOUR_DRIVE_LINK"
+class="homework-btn">
+Open Homework
+</a>
+
+</div>
+
+<div class="homework-card">
+
+<div class="homework-new">NEW</div>
+
+<i class="fas fa-flask"></i>
+
+<h3>Chemistry Homework</h3>
+
+<a href="YOUR_DRIVE_LINK"
+class="homework-btn">
+Open Homework
+</a>
+
+</div>
+
+<div class="homework-card">
+
+<div class="homework-new">NEW</div>
+
+<i class="fas fa-square-root-alt"></i>
+
+<h3>Maths Worksheet</h3>
+
+<a href="YOUR_DRIVE_LINK"
+class="homework-btn">
+Open Homework
+</a>
+
+</div>
+
+<div class="homework-card">
+
+<div class="homework-new">NEW</div>
+
+<i class="fas fa-laptop-code"></i>
+
+<h3>Computer Homework</h3>
+
+<a href="YOUR_DRIVE_LINK"
+class="homework-btn">
+Open Homework
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+            
+            
+            
     </div>
     </section>
 
