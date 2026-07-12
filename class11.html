@@ -288,6 +288,71 @@ background:linear-gradient(135deg,#1d4ed8,#4338ca);
 100%{background-position:0% 50%;}
 }
 
+.popup{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.popup-content{
+    background:#fff;
+    width:350px;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    position:relative;
+    animation:pop .3s ease;
+}
+
+.popup-content h2{
+    margin-bottom:8px;
+    color:#1f2937;
+}
+
+.popup-content p{
+    color:#6b7280;
+    margin-bottom:25px;
+}
+
+.popup-btn{
+    display:block;
+    margin:12px 0;
+    padding:15px;
+    text-decoration:none;
+    border-radius:12px;
+    color:#fff;
+    font-weight:600;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    transition:.3s;
+}
+
+.popup-btn:hover{
+    transform:translateY(-3px);
+}
+
+.close{
+    position:absolute;
+    top:12px;
+    right:18px;
+    font-size:28px;
+    cursor:pointer;
+}
+
+@keyframes pop{
+    from{
+        transform:scale(.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
   
 </style>
 </head>
@@ -337,9 +402,11 @@ background:linear-gradient(135deg,#1d4ed8,#4338ca);
 </a>
 </li>
 <li>
-<a href="https://drive.google.com/file/d/1VYrQqNjgJcfhec_wkaWJoDMwkveVqGec/view?usp=drivesdk"" class="premium-chapter" target="_blank">
-    <span class="chapter-title">Structure of Atom</span>
-    <span class="chapter-icon">📖</span>
+<a href="#" class="premium-chapter" onclick="openPopup()">
+
+<span class="chapter-title">Structure of Atom</span>
+<span class="chapter-icon">📖</span>
+
 </a>
 </li>
 <li>
@@ -387,5 +454,51 @@ background:linear-gradient(135deg,#1d4ed8,#4338ca);
 © 2026 EZE NOTES BY CHIRAG JANGID
 </footer>
 
+  <div id="notesPopup" class="popup">
+
+    <div class="popup-content">
+
+        <span class="close" onclick="closePopup()">&times;</span>
+
+        <h2>Structure of Atom</h2>
+
+        <p>Select Notes</p>
+
+        <a href="YOUR_REGULAR_NOTES_LINK"
+           target="_blank"
+           class="popup-btn">
+           📘 Regular Notes
+        </a>
+
+        <a href="YOUR_HANDWRITTEN_NOTES_LINK"
+           target="_blank"
+           class="popup-btn">
+           ✍️ Handwritten Notes
+        </a>
+
+    </div>
+
+</div>
+  
+ 
+  <script>
+
+function openPopup(){
+    document.getElementById("notesPopup").style.display="flex";
+}
+
+function closePopup(){
+    document.getElementById("notesPopup").style.display="none";
+}
+
+window.onclick=function(e){
+    const popup=document.getElementById("notesPopup");
+    if(e.target===popup){
+        popup.style.display="none";
+    }
+}
+
+</script>
+  
 </body>
 </html>
