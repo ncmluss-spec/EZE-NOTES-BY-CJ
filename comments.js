@@ -1,3 +1,6 @@
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
 import {
 getFirestore,
 collection,
@@ -18,7 +21,7 @@ getAuth
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-const auth = getAuth(app);
+
 
 const firebaseConfig = {
 apiKey: "AIzaSyCVB2ugk1IxUGd4QHCesg3v0VqcFyxt0c8",
@@ -31,6 +34,7 @@ appId: "1:156592482475:web:5492a1702d4b92e6e1afee"
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
 
 const postBtn = document.getElementById("postBtn");
 const commentsDiv = document.getElementById("comments");
